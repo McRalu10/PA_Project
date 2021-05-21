@@ -9,17 +9,47 @@
         android:id="@+id/nav_home"
         android:name="com.example.studenthotel.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+    <action
+        android:id="@+id/action_homeFragment_to_profileFragment"
+        app:destination="@id/bottom_explore"/>
+    </fragment>
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_rooms"
         android:name="com.example.studenthotel.ui.gallery.GalleryFragment"
         android:label="@string/menu_rooms"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_rooms" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_prices"
         android:name="com.example.studenthotel.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_prices"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_prices" />
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.example.studenthotel.ui.about.AboutFragment"
+        android:label="@string/menu_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/nav_contact"
+        android:name="com.example.studenthotel.ui.contact.ContactFragment"
+        android:label="@string/menu_contact"
+        tools:layout="@layout/fragment_contact" />
+    <fragment
+        android:id="@+id/bottom_explore"
+        android:name="com.example.studenthotel.ui.explore.ExploreFragment"
+        android:label="@string/menu_explore"
+        tools:layout="@layout/fragment_explore" />
+    <fragment
+        android:id="@+id/bottom_inbox"
+        android:name="com.example.studenthotel.ui.inbox.InboxFragment"
+        android:label="@string/menu_inbox"
+        tools:layout="@layout/fragment_inbox" />
+    <fragment
+        android:id="@+id/bottom_profile"
+        android:name="com.example.studenthotel.ui.profile.ProfileFragment"
+        android:label="@string/menu_account"
+        tools:layout="@layout/fragment_profile" />
+
 </navigation>
