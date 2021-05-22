@@ -104,4 +104,5 @@ public class User {
     public void setAccommodation(Accommodation accommodation) {
         this.accommodation = accommodation;
     }
+
 }

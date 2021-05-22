@@ -80,4 +80,8 @@ public class Activity {
     public void setParticipants(List<User> participants) {
         this.participants = participants;
     }
+
+    public Double getPrice() {
+        return price;
+    }
 }
