@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_home">
     <action
         android:id="@+id/action_homeFragment_to_profileFragment"
-        app:destination="@id/bottom_explore"/>
+        app:destination="@id/nav_home"/>
     </fragment>
 
     <fragment
@@ -37,17 +37,17 @@
         android:label="@string/menu_contact"
         tools:layout="@layout/fragment_contact" />
     <fragment
-        android:id="@+id/bottom_explore"
-        android:name="com.example.studenthotel.ui.explore.ExploreFragment"
+        android:id="@+id/action_explore"
+        android:name="com.example.studenthotel.ui.home.HomeFragment"
         android:label="@string/menu_explore"
-        tools:layout="@layout/fragment_explore" />
+        tools:layout="@layout/fragment_home" />
     <fragment
-        android:id="@+id/bottom_inbox"
+        android:id="@+id/action_inbox"
         android:name="com.example.studenthotel.ui.inbox.InboxFragment"
         android:label="@string/menu_inbox"
         tools:layout="@layout/fragment_inbox" />
     <fragment
-        android:id="@+id/bottom_profile"
+        android:id="@+id/action_profile"
         android:name="com.example.studenthotel.ui.profile.ProfileFragment"
         android:label="@string/menu_account"
         tools:layout="@layout/fragment_profile" />

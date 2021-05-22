@@ -16,4 +16,7 @@
     <string name="menu_inbox">Inbox</string>
     <string name="menu_account">Profile</string>
 
+    <string name="text_welcome">Welcome To</string>
+
+
 </resources>

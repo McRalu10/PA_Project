@@ -16,11 +16,23 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
+            <TextView
+                android:id="@+id/text_welcome"
                 android:layout_width="match_parent"
-                android:layout_height="219dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:src="@mipmap/logo_main"
+                android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/text_welcome"
+                android:textAlignment="center"
+                android:textSize="30sp" />
+
+            <ImageView
+                android:layout_width="347dp"
+                android:layout_height="171dp"
+                android:layout_gravity="center_horizontal"
+                android:labelFor="@id/text_welcome"
+                android:src="@mipmap/logo_main_foreground"
                 tools:layout_editor_absoluteX="70dp"
                 tools:layout_editor_absoluteY="167dp" />
 

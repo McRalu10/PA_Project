@@ -16,56 +16,20 @@ import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.example.studenthotel.databinding.ActivityMainBinding
-
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
-//    private var mAppBarConfiguration: AppBarConfiguration? = null
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main)
-//        val toolbar = findViewById<Toolbar>(R.id.main_toolbar)
-//        setSupportActionBar(toolbar)
-//        //        FloatingActionButton fab = findViewById(R.id.fab);
-////        fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-////                .setAction("Action", null).show());
-//        val drawer = findViewById<DrawerLayout>(R.id.main_drawer_layout)
-//        val navigationView = findViewById<NavigationView>(R.id.main_navigation_view)
-//        // Passing each menu ID as a set of Ids because each
-//        // menu should be considered as top level destinations.
-//        mAppBarConfiguration = AppBarConfiguration.Builder(
-//                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_about, R.id.nav_contact)
-//                .setDrawerLayout(drawer)
-//                .build()
-//        val navController = Navigation.findNavController(this, R.id.main_nav_host)
-//        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration!!)
-//        NavigationUI.setupWithNavController(navigationView, navController)
-//    }
-//
-//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        menuInflater.inflate(R.menu.main, menu)
-//        return true
-//    }
-//
-//    override fun onSupportNavigateUp(): Boolean {
-//        val navController = Navigation.findNavController(this, R.id.main_nav_host)
-//        return (NavigationUI.navigateUp(navController, mAppBarConfiguration!!)
-//                || super.onSupportNavigateUp())
-//    }
-private lateinit var appBarConfiguration: AppBarConfiguration
+
+    private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var navController: NavController
     lateinit var drawerLayout: DrawerLayout
     lateinit var toolbar: Toolbar
     lateinit var bottomNavigationView: BottomNavigationView
     lateinit var navigationView: NavigationView
-//    lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_main)
 
         navController = findNavController(R.id.main_nav_host) //Initialising navController
@@ -73,9 +37,9 @@ private lateinit var appBarConfiguration: AppBarConfiguration
         toolbar = findViewById(R.id.main_toolbar)
         bottomNavigationView = findViewById(R.id.main_bottom_navigation_view)
         navigationView = findViewById(R.id.main_navigation_view)
-        appBarConfiguration = AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_rooms,R.id.nav_prices,
-                R.id.nav_about, R.id.nav_contact, R.id.action_explore,R.id.action_inbox,R.id.action_account) //Pass the ids of fragments from nav_graph which you d'ont want to show back button in toolbar
-                .setOpenableLayout(drawerLayout) //Pass the drawer layout id from activity xml
+        appBarConfiguration = AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_rooms, R.id.nav_prices,
+                R.id.nav_about, R.id.nav_contact, R.id.action_explore, R.id.action_inbox, R.id.action_profile)
+                .setOpenableLayout(drawerLayout)
                 .build()
 
         setSupportActionBar(toolbar) //Set toolbar
@@ -83,6 +47,20 @@ private lateinit var appBarConfiguration: AppBarConfiguration
         setupActionBarWithNavController(navController, appBarConfiguration) //Setup toolbar with back button and drawer icon according to appBarConfiguration
 
         visibilityNavElements(navController) //If you want to hide drawer or bottom navigation configure that in this function
+
+//        BottomNavigationView.OnNavigationItemSelectedListener { item ->
+//            when(item.itemId) {
+//                R.id.bottom_explore -> {
+//                    // Respond to navigation item 1 click
+//                    true
+//                }
+//                R.id.item2 -> {
+//                    // Respond to navigation item 2 click
+//                    true
+//                }
+//                else -> false
+//            }
+//        }
     }
 
     private fun visibilityNavElements(navController: NavController) {
@@ -93,13 +71,16 @@ private lateinit var appBarConfiguration: AppBarConfiguration
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.bottom_profile -> hideBothNavigation()
                 R.id.nav_about -> hideBottomNavigation()
+                R.id.nav_contact -> hideBottomNavigation()
+                R.id.nav_rooms -> hideBottomNavigation()
+                R.id.nav_prices -> hideBottomNavigation()
                 else -> showBothNavigation()
             }
         }
 
     }
+
 
     private fun hideBothNavigation() { //Hide both drawer and bottom navigation bar
         bottomNavigationView.visibility = View.GONE

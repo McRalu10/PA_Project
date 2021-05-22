@@ -9,7 +9,7 @@
     <item android:id="@+id/action_inbox"
         android:title="@string/menu_inbox"
         android:icon="@drawable/ic_inbox" />
-    <item android:id="@+id/action_account"
+    <item android:id="@+id/action_profile"
         android:title="@string/menu_account"
         android:icon="@drawable/ic_account" />
 </menu>
