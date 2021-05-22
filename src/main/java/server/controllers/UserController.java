@@ -5,46 +5,46 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import server.models.Person;
-import server.services.PersonService;
+import server.models.User;
+import server.services.UserService;
 
 import java.util.List;
 import java.util.UUID;
 
 @RestController
 @RequestMapping("persons")
-public class PersonController {
+public class UserController {
     @Autowired
-    private PersonService service;
+    private UserService service;
 
     @GetMapping()
-    public ResponseEntity<List<Person>> getPersons(){
-        List<Person> Persons = service.getAllPersons();
-        return new ResponseEntity<>(Persons, new HttpHeaders(), HttpStatus.OK);
+    public ResponseEntity<List<User>> getPersons(){
+        List<User> users = service.getAllPersons();
+        return new ResponseEntity<>(users, new HttpHeaders(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Person> getPersonByID(@PathVariable UUID id){
-        Person existingPerson = service.getPersonByID(id);
-        if(existingPerson==null){
+    public ResponseEntity<User> getPersonByID(@PathVariable UUID id){
+        User existingUser = service.getPersonByID(id);
+        if(existingUser ==null){
             return new ResponseEntity<>(new HttpHeaders(),HttpStatus.NOT_FOUND);
         }else {
-            return new ResponseEntity<>(existingPerson, new HttpHeaders(),HttpStatus.OK);
+            return new ResponseEntity<>(existingUser, new HttpHeaders(),HttpStatus.OK);
         }
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Person> create(@RequestBody Person Person)
+    public ResponseEntity<User> create(@RequestBody User User)
     {
-        Person newPerson=service.create(Person);
-        return new ResponseEntity<>(newPerson, new HttpHeaders(),HttpStatus.CREATED);
+        User newUser =service.create(User);
+        return new ResponseEntity<>(newUser, new HttpHeaders(),HttpStatus.CREATED);
     }
 
     @PutMapping("/update")
-    public ResponseEntity<Person> update(@RequestBody Person Person){
-        Person newPerson=service.update(Person);
-        if(newPerson != null){
-            return new ResponseEntity<>(newPerson, new HttpHeaders(), HttpStatus.OK);
+    public ResponseEntity<User> update(@RequestBody User User){
+        User newUser =service.update(User);
+        if(newUser != null){
+            return new ResponseEntity<>(newUser, new HttpHeaders(), HttpStatus.OK);
         }else {
             return new ResponseEntity<>( new HttpHeaders(), HttpStatus.NOT_FOUND);
         }
