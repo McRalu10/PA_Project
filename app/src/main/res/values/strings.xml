@@ -83,5 +83,25 @@
     <string name="website">Website</string>
     <string name="hotel_website">https://studenthotel.herokuapp.com/</string>
 
+    <string name="room_type">Room Type</string>
+    <string name="service_type">Service Type</string>
+
+    <string-array name="room_options">
+        <item>Single</item>
+        <item>Double</item>
+        <item>Suite</item>
+        <item>Apartment</item>
+    </string-array>
+    <string-array name="account_options">
+        <item>Student</item>
+        <item>Pupil</item>
+        <item>Teaching Staff</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="service_options">
+        <item>Hotel</item>
+        <item>Extended</item>
+        <item>Extended_Basic</item>
+    </string-array>
 
 </resources>

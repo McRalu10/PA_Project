@@ -3,11 +3,15 @@ package com.example.studenthotel
 import android.os.Bundle
 import android.view.Menu
 import android.view.View
+import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.customview.widget.Openable
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.AppBarConfiguration
@@ -17,7 +21,10 @@ import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.studenthotel.ui.home.FragmentSearchActivities
+import com.example.studenthotel.ui.home.FragmentSearchStays
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,6 +34,11 @@ class MainActivity : AppCompatActivity() {
     lateinit var toolbar: Toolbar
     lateinit var bottomNavigationView: BottomNavigationView
     lateinit var navigationView: NavigationView
+    lateinit var tabLayout:TabLayout
+    lateinit var frameLayout:FrameLayout
+    lateinit var fragment:Fragment
+    lateinit var fragmentTransaction:FragmentTransaction
+    lateinit var fragmentManager: FragmentManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +49,8 @@ class MainActivity : AppCompatActivity() {
         toolbar = findViewById(R.id.main_toolbar)
         bottomNavigationView = findViewById(R.id.main_bottom_navigation_view)
         navigationView = findViewById(R.id.main_navigation_view)
+        tabLayout = findViewById(R.id.home_tabs)
+        frameLayout = findViewById(R.id.home_frame_layout)
         appBarConfiguration = AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_rooms, R.id.nav_services,
                 R.id.nav_about, R.id.nav_contact, R.id.action_explore, R.id.action_inbox, R.id.action_profile)
                 .setOpenableLayout(drawerLayout)
@@ -47,6 +61,38 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration) //Setup toolbar with back button and drawer icon according to appBarConfiguration
 
         visibilityNavElements(navController) //If you want to hide drawer or bottom navigation configure that in this function
+//
+//        fragment = FragmentSearchStays()
+//        fragmentManager = supportFragmentManager
+//        fragmentTransaction = fragmentManager.beginTransaction()
+//        fragmentTransaction.replace(R.id.home_frame_layout, fragment)
+//        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+//        fragmentTransaction.commit()
+//        //adding listener for tab select
+//        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+//            override fun onTabSelected(tab: TabLayout.Tab) {
+//                // creating cases for fragment
+//                when (tab.position) {
+//                    0 -> fragment = FragmentSearchStays()
+//                    1 -> fragment = FragmentSearchActivities()
+//
+//                }
+//                val fm = supportFragmentManager
+//                val ft = fm.beginTransaction()
+//                ft.replace(R.id.home_frame_layout, fragment)
+//                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+//                ft.commit()
+//            }
+//
+//            override fun onTabUnselected(tab: TabLayout.Tab) {
+//
+//            }
+//
+//            override fun onTabReselected(tab: TabLayout.Tab) {
+//
+//            }
+//        })
+//
 
 //        BottomNavigationView.OnNavigationItemSelectedListener { item ->
 //            when(item.itemId) {
