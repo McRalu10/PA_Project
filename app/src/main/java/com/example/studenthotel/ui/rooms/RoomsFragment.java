@@ -1,4 +1,4 @@
-package com.example.studenthotel.ui.contact;
+package com.example.studenthotel.ui.rooms;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,17 +10,18 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.studenthotel.R;
-import com.example.studenthotel.ui.about.AboutViewModel;
+import com.example.studenthotel.ui.rooms.RoomsViewModel;
 
-public class ContactFragment extends Fragment {
-    private ContactViewModel contactViewModel;
+public class RoomsFragment extends Fragment {
+
+    private RoomsViewModel roomsViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        contactViewModel = new ViewModelProvider(this).get(ContactViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_contact, container, false);
-//        final TextView textView = root.findViewById(R.id.text_about);
-//        AboutViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        roomsViewModel = new ViewModelProvider(this).get(RoomsViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_rooms, container, false);
+//        final TextView textView = root.findViewById(R.id.text_Rooms);
+//        RoomsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
 //            @Override
 //            public void onChanged(@Nullable String s) {
 //                textView.setText(s);

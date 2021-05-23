@@ -11,21 +11,21 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home">
     <action
-        android:id="@+id/action_homeFragment_to_profileFragment"
+        android:id="@+id/action"
         app:destination="@id/nav_home"/>
     </fragment>
 
     <fragment
         android:id="@+id/nav_rooms"
-        android:name="com.example.studenthotel.ui.gallery.GalleryFragment"
+        android:name="com.example.studenthotel.ui.rooms.RoomsFragment"
         android:label="@string/menu_rooms"
         tools:layout="@layout/fragment_rooms" />
 
     <fragment
         android:id="@+id/nav_services"
-        android:name="com.example.studenthotel.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_prices"
-        tools:layout="@layout/fragment_prices" />
+        android:name="com.example.studenthotel.ui.services.ServicesFragment"
+        android:label="@string/menu_services"
+        tools:layout="@layout/fragment_services" />
     <fragment
         android:id="@+id/nav_about"
         android:name="com.example.studenthotel.ui.about.AboutFragment"

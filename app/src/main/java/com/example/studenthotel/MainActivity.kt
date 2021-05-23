@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         toolbar = findViewById(R.id.main_toolbar)
         bottomNavigationView = findViewById(R.id.main_bottom_navigation_view)
         navigationView = findViewById(R.id.main_navigation_view)
-        appBarConfiguration = AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_rooms, R.id.nav_prices,
+        appBarConfiguration = AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_rooms, R.id.nav_services,
                 R.id.nav_about, R.id.nav_contact, R.id.action_explore, R.id.action_inbox, R.id.action_profile)
                 .setOpenableLayout(drawerLayout)
                 .build()
@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
                  R.id.nav_about -> hideBottomNavigation()
                 R.id.nav_contact -> hideBottomNavigation()
                 R.id.nav_rooms -> hideBottomNavigation()
-                R.id.nav_prices -> hideBottomNavigation()
+                R.id.nav_services -> hideBottomNavigation()
                 else -> showBothNavigation()
             }
         }

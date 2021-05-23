@@ -29,25 +29,20 @@
                 android:textSize="30sp" />
 
             <ImageView
-                android:layout_width="347dp"
-                android:layout_height="171dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:labelFor="@id/text_welcome"
-                android:src="@mipmap/logo_main_foreground"
-                tools:layout_editor_absoluteX="70dp"
-                tools:layout_editor_absoluteY="167dp" />
+                android:src="@mipmap/logo_main_foreground" />
 
             <TextView
                 android:id="@+id/text_home"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
                 android:gravity="center_horizontal"
                 android:textAlignment="center"
-                android:textSize="20sp"
+                android:textSize="1sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

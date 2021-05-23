@@ -61,6 +61,27 @@
     <string name="mihai_description">Stabilirea metodelor pentru a putea intra in contact cu posibili investitori, verificarea eligibilatii pentru beneficierea de fonduri de investitii, propunerea de a avea o cantina asociata cu o aplicatie de mobil, estimarile serviciilor oferite cat si durata acestora impreuna cu veniturile anuale, identificarea serviciilor comparabile si a bugetului de care il dispun pentru prestare si mentinere pe piata.</string>
     <string name="victor_stanciu">Victor Stanciu</string>
     <string name="menu_services">Services</string>
+    <string name="title_services">Everything under one roof</string>
+    <string name="subtitle_services">Our hotels are dynamic hubs where people can meet, work, eat, drink, hold events or stay for anything from a night to a year.</string>
+    <string name="student_accommodation">Student accommodation</string>
+    <string name="card1_description">Our all-inclusive student accommodation gives great value and an inspiring experience.</string>
+    <string name="hotel_rooms">Hotel rooms</string>
+    <string name="card2_description">Whether you’re in town for work or play, our modern rooms make for a stylish stay.</string>
+    <string name="extended_stay">Extended Stay</string>
+    <string name="card3_description">Our rooms have all the creature comforts you need to settle in for a longer stay.</string>
+    <string name="card4_description">Our co-working spaces are hubs where freelancers and businesses can change the world.</string>
+    <string name="co_working_space">Co-working Space</string>
+    <string name="meeting_amp_event_rooms"><![CDATA[Meeting & Event Rooms]]></string>
+    <string name="card5_description">Our flexible, fully-equipped spaces are ideal for productive meetings and awesome events.</string>
+    <string name="eat_amp_drink"><![CDATA[Eat & Drink]]></string>
+    <string name="card6_description">Our restaurants and bars are perfect for sharing moments in an unfussy, lively setting.</string>
+    <string name="contact_description">We are here to answer any questions you may have about our services.</string>
+    <string name="phone">Phone</string>
+    <string name="phone_number">+40 761383639</string>
+    <string name="e_mail">E-mail</string>
+    <string name="email">ralucamacovei10@gmail.com</string>
+    <string name="website">Website</string>
+    <string name="hotel_website">https://studenthotel.herokuapp.com/</string>
 
 
 </resources>

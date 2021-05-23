@@ -1,15 +1,16 @@
-package com.example.studenthotel.ui.explore;
+package com.example.studenthotel.ui.rooms;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ExploreViewModel extends ViewModel {
+public class RoomsViewModel extends ViewModel {
+
     private MutableLiveData<String> mText;
 
-    public ExploreViewModel() {
+    public RoomsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is explore fragment");
+        mText.setValue("This is rooms fragment");
     }
 
     public LiveData<String> getText() {
