@@ -64,6 +64,18 @@ public class Price {
     private final static Double STUDENT_MEALS_PRICE = 20.25;
     private final static Double OTHER_MEALS_PRICE = 35D;
 
+    public UUID getPriceID() {
+        return priceID;
+    }
+
+    public Double getRoomPrice() {
+        return roomPrice;
+    }
+
+    public Double getMealsPrice() {
+        return mealsPrice;
+    }
+
     public void calculatePrice(User user, Accommodation accommodation) {
         if (user.getType() == AccountType.STUDENT || user.getType() == AccountType.PUPIL || user.getType() == AccountType.TEACHING_STAFF) {
             this.mealsPrice = STUDENT_MEALS_PRICE;

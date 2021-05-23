@@ -12,7 +12,7 @@ public class UserService {
     @Autowired
     private UserRepository repository;
 
-    public List<User> getAllPersons() {
+    public List<User> getAllUsers() {
         List<User> allUsers = repository.findAll();
         if (!allUsers.isEmpty()) {
             return allUsers;
@@ -20,26 +20,45 @@ public class UserService {
             return new ArrayList<>();
         }
     }
-    public User getPersonByID(UUID id) {
-        List<User> allUsers = repository.findAll();
-        for (User existingUser : allUsers) {
-            if (existingUser.getPersonID().equals(id)) {
-                return existingUser;
-            }
-        }
-        return null;
+
+    public Optional<User> getUserByID(UUID id) {
+        return repository.findById(id);
     }
 
-    public User create(User User) {
-        User.setPersonID(UUID.randomUUID());
-        User.setCreationDate(new Date());
-        User = repository.save(User);
-        return User;
+    public User create(User user) {
+        user.setUserID(UUID.randomUUID());
+        user.setCreationDate(new Date());
+        user.setLogged(true);
+        return repository.save(user);
+
+    }
+
+    public boolean login(User user) {
+        Optional<User> existingUser = repository.findByEmail(user.getEmail());
+        if (existingUser.isPresent()) {
+            if (user.getPassword().equals(existingUser.get().getPassword())) {
+                user.setLogged(true);
+                repository.save(user);
+                return true;
+
+            }
+        }
+        return false;
+    }
+    public boolean resetPassword(User user){
+        Optional<User> existingUser = repository.findByEmail(user.getEmail());
+        if(existingUser.isPresent()){
+            User updatedUser = existingUser.get();
+            updatedUser.setPassword(user.getPassword());
+            repository.save(updatedUser);
+            return true;
+        }
+        return false;
     }
 
     public User update(User user) {
-        UUID id = user.getPersonID();
-        Optional<User> availablePerson=repository.findById(id);
+        UUID id = user.getUserID();
+        Optional<User> availablePerson = repository.findById(id);
         User newUser;
         if (availablePerson.isPresent()) {
             newUser = availablePerson.get();
@@ -56,6 +75,7 @@ public class UserService {
     public boolean deletePerson(UUID id) {
         if (repository.existsById(id)) {
             repository.deleteById(id);
+            return true;
         }
         return repository.existsById(id);
     }

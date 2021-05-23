@@ -9,7 +9,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID personID;
+    private UUID userID;
     private String name;
     @Column(unique = true)
     private String email;
@@ -25,12 +25,12 @@ public class User {
     private Accommodation accommodation;
 
 
-    public UUID getPersonID() {
-        return personID;
+    public UUID getUserID() {
+        return userID;
     }
 
-    public void setPersonID(UUID personID) {
-        this.personID = personID;
+    public void setUserID(UUID personID) {
+        this.userID = personID;
     }
 
     public String getName() {

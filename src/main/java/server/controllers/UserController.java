@@ -9,6 +9,7 @@ import server.models.User;
 import server.services.UserService;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @RestController
@@ -19,14 +20,14 @@ public class UserController {
 
     @GetMapping()
     public ResponseEntity<List<User>> getPersons(){
-        List<User> users = service.getAllPersons();
+        List<User> users = service.getAllUsers();
         return new ResponseEntity<>(users, new HttpHeaders(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<User> getPersonByID(@PathVariable UUID id){
-        User existingUser = service.getPersonByID(id);
-        if(existingUser ==null){
+    public ResponseEntity<?> getPersonByID(@PathVariable UUID id){
+        Optional<User> existingUser = service.getUserByID(id);
+        if(existingUser.isEmpty()){
             return new ResponseEntity<>(new HttpHeaders(),HttpStatus.NOT_FOUND);
         }else {
             return new ResponseEntity<>(existingUser, new HttpHeaders(),HttpStatus.OK);

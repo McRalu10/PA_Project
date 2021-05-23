@@ -15,6 +15,7 @@ public class Accommodation {
     @OneToOne
     private Price price;
     private boolean free;
+    private int capacity;
     private boolean checkedIn;
     private boolean checkedOut;
     private Date checkInDate;
@@ -23,12 +24,21 @@ public class Accommodation {
     public Accommodation(AccommodationType accommodationType) {
         new Accommodation();
         this.accommodationType = accommodationType;
+        if (accommodationType == AccommodationType.APARTMENT) {
+            this.capacity = 4;
+        } else if (accommodationType == AccommodationType.SUITE) {
+            this.capacity = 3;
+        } else if (accommodationType == AccommodationType.DOUBLE) {
+            this.capacity = 2;
+        } else {
+            this.capacity = 1;
+        }
     }
 
     public Accommodation() {
-        this.free=true;
-        this.checkedIn=false;
-        this.checkedOut=false;
+        this.free = true;
+        this.checkedIn = false;
+        this.checkedOut = false;
     }
 
     public AccommodationType getAccommodationType() {
@@ -93,5 +103,13 @@ public class Accommodation {
 
     public void setCheckOutDate(Date checkOutDate) {
         this.checkOutDate = checkOutDate;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 }
