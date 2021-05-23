@@ -37,6 +37,11 @@
     <string name="double_room">Double Room</string>
     <string name="suite">Suite</string>
     <string name="apartment">Apartment</string>
+    <string name="messages_tab">Messages</string>
+    <string name="notifications_tab">Notifications</string>
+    <string name="check_in">Check In</string>
+    <string name="check_out">Check Out</string>
+    <string name="sign_out">Sign Out</string>
 
 
 </resources>
