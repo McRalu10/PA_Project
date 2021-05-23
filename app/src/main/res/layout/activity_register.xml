@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background_pink"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="40dp"
+            android:src="@mipmap/logo_main_foreground"/>
+        <EditText
+            android:id="@+id/register_name"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:layout_marginBottom="20dp"
+            android:background="@color/white"
+            android:hint="@string/hint_name"/>
+        <EditText
+            android:id="@+id/register_email"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:layout_marginBottom="20dp"
+            android:background="@color/white"
+            android:hint="@string/email_hint"/>
+        <EditText
+            android:id="@+id/register_password"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:inputType="textPassword"
+            android:background="@color/white"
+            android:hint="@string/password_hint"/>
+        <EditText
+            android:id="@+id/register_confirm_password"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:inputType="textPassword"
+            android:background="@color/white"
+            android:hint="@string/confirm_password"/>
+        <Button
+            android:id="@+id/register_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@string/register_button"/>
+
+        <TextView
+            android:id="@+id/already_have_account_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:text="@string/existing_account_button"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

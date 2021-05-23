@@ -17,6 +17,19 @@
     <string name="menu_account">Profile</string>
 
     <string name="text_welcome">Welcome To</string>
+    <string name="tab_stays">Stays</string>
+    <string name="tab_activities">Activities</string>
+    <string name="date_hint">Pick a date range</string>
+    <string name="calendar_icon">calendar_icon</string>
+    <string name="search_button">Search</string>
+    <string name="email_hint">E-mail</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button">Login</string>
+    <string name="register_button">Register</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="hint_name">Name</string>
+    <string name="existing_account_button">Already have an account?</string>
+    <string name="confirm_password">Re-type your password</string>
 
 
 </resources>

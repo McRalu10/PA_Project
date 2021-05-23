@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.nav_about -> hideBottomNavigation()
+                 R.id.nav_about -> hideBottomNavigation()
                 R.id.nav_contact -> hideBottomNavigation()
                 R.id.nav_rooms -> hideBottomNavigation()
                 R.id.nav_prices -> hideBottomNavigation()
