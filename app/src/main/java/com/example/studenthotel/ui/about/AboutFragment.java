@@ -21,7 +21,7 @@ public class AboutFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         aboutViewModel = new ViewModelProvider(this).get(AboutViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_rooms, container, false);
+        View root = inflater.inflate(R.layout.fragment_about, container, false);
 //        final TextView textView = root.findViewById(R.id.text_about);
 //        AboutViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
 //            @Override

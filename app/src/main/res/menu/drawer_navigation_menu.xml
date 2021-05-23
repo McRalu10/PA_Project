@@ -13,9 +13,9 @@
             android:icon="@drawable/ic_baseline_hotel"
             android:title="@string/menu_rooms" />
         <item
-            android:id="@+id/nav_prices"
+            android:id="@+id/nav_services"
             android:icon="@drawable/ic_baseline_price"
-            android:title="@string/menu_prices" />
+            android:title="@string/menu_services" />
         <item
             android:id="@+id/nav_about"
             android:icon="@drawable/ic_baseline_about"

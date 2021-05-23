@@ -42,6 +42,25 @@
     <string name="check_in">Check In</string>
     <string name="check_out">Check Out</string>
     <string name="sign_out">Sign Out</string>
+    <string name="andreea_higiu">Andreea Higiu</string>
+    <string name="team_lead">Team Lead</string>
+    <string name="dia_description">Sunt un spirit creativ, deschis la idei noi și ieșite din comun, sunt plină de energie, optimism și motivație de a atinge succesul. Îmi place arta și ador călătoriile, iar tocmai de aceea simt că StudentHub a reușit să combine aceste două pasiuni ale mele oferindu-mi oportunitatea de a împărtăși experiențe memorabile. În cadrul proiectului am lucrat la design, la găsirea unei strategii potrivite de marketing, la documentația pentru Beachhead Market, și am adus contribuție în găsirea de End-Users și definirea pieței Top-Target.</string>
+    <string name="raluca_macovei">Raluca Macovei</string>
+    <string name="java_mobile_app_developer">Java Mobile App Developer</string>
+    <string name="raluca_description">Ca parte din echipa StudentHub, rolul meu principal a fost sa dezvolt prototipul aplicației noastre mobile. Astfel, responsabilitatea mea a fost sa digitalizez tot procesul de check-in/check-out, verificare disponibilități și oferire de informații, pentru a crea un proces cât mai simplu pentru studenții interesați, dar și pentru posibilii investitori</string>
+    <string name="dragos_ciopei">Dragos Ciopei</string>
+    <string name="web_developer">WEB Developer</string>
+    <string name="dragos_description">Ca parte din echipa StudentHub, rolul meu principal a fost sa dezvolt comunicarea si prezentarea WEB a business-ului nostru. Astfel, responsabilitatea mea a fost expunerea online si publicitatea dar si proiectarea unei aplciatii de instant messaging pentru a ajuta potentialii clienti.</string>
+    <string name="ingrid_romila">Ingrid Romila</string>
+    <string name="ingrid_description">Sunt o persoana optimistă, plina de viata si mereu gata sa-ti ofere zâmbetul de care ai nevoie pentru a-ti face ziua mai buna. Imi place sa mă implic si sa ajut oameni si tocmai de aceea valorile mele se aliniază cu principiile echipei StudentHub. Sunt foarte atentă la detalii, analizez mult, iar acesta a fost atuul meu în cadrul acestui proiect. Am contribuit la crearea planului si pașilor proiectului, cat si la definirea si gasirea exacta a nișei de piata si a utilizatorilor finali.</string>
+    <string name="analyst">Analyst</string>
+    <string name="administration">Administration</string>
+    <string name="victor_description">Sunt ambitios si sunt pasionat de matematica si sah. Urmez cursurile a doua facultati (Informatica si Drept). Cred in a inova, motiv pentru care am ales disciplina AIIT ca optional! M-am ocupat de partea legislativa in ceea ce priveste necesitatea avizelor si normelor legale ce trebuie indeplinite pentru deschiderea hotelului</string>
+    <string name="mihai_berea">Mihai Berea</string>
+    <string name="finance">Finance</string>
+    <string name="mihai_description">Stabilirea metodelor pentru a putea intra in contact cu posibili investitori, verificarea eligibilatii pentru beneficierea de fonduri de investitii, propunerea de a avea o cantina asociata cu o aplicatie de mobil, estimarile serviciilor oferite cat si durata acestora impreuna cu veniturile anuale, identificarea serviciilor comparabile si a bugetului de care il dispun pentru prestare si mentinere pe piata.</string>
+    <string name="victor_stanciu">Victor Stanciu</string>
+    <string name="menu_services">Services</string>
 
 
 </resources>
