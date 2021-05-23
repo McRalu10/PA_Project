@@ -30,6 +30,9 @@
     <string name="hint_name">Name</string>
     <string name="existing_account_button">Already have an account?</string>
     <string name="confirm_password">Re-type your password</string>
+    <string name="are_you">Are you?</string>
+    <string name="new_password_hint">New Password</string>
+    <string name="change_password_button">Change Password</string>
 
 
 </resources>
