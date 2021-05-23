@@ -33,6 +33,10 @@
     <string name="are_you">Are you?</string>
     <string name="new_password_hint">New Password</string>
     <string name="change_password_button">Change Password</string>
+    <string name="single_room">Single Room</string>
+    <string name="double_room">Double Room</string>
+    <string name="suite">Suite</string>
+    <string name="apartment">Apartment</string>
 
 
 </resources>
