@@ -67,14 +67,17 @@
                 android:id="@+id/account_spinner"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:entries="@array/account_options"/>
+                android:entries="@array/account_options"
+                android:prompt="@string/account_type"
+                android:spinnerMode="dialog"/>
         </LinearLayout>
         <Button
             android:id="@+id/register_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
-            android:text="@string/register_button"/>
+            android:text="@string/register_button"
+            android:onClick="register"/>
 
         <TextView
             android:id="@+id/already_have_account_button"
@@ -83,7 +86,8 @@
             android:layout_marginBottom="30dp"
             android:text="@string/existing_account_button"
             android:clickable="true"
-            android:focusable="true" />
+            android:focusable="true"
+            android:onClick="goToLogin"/>
 
     </LinearLayout>
 

@@ -24,11 +24,13 @@
             <TextView
                 android:layout_width="200dp"
                 android:layout_height="match_parent"
+                android:background="@color/white"
                 android:hint="@string/date_hint" />
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_calendar"
+                android:background="@color/white"
                 android:contentDescription="@string/calendar_icon" />
         </LinearLayout>
 

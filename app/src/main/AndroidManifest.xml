@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StudentHotel">
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.studenthotel.auth.LoginActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.StudentHotel.NoActionBar">
             <intent-filter>
@@ -19,6 +19,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.StudentHotel.NoActionBar"/>
+        <activity
+            android:name=".auth.RegisterActivity"
+            android:theme="@style/Theme.StudentHotel.NoActionBar"/>
+        <activity
+            android:name=".auth.ForgotActivity"
+            android:theme="@style/Theme.StudentHotel.NoActionBar"/>
     </application>
 
 </manifest>

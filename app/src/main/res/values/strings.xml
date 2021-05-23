@@ -85,6 +85,8 @@
 
     <string name="room_type">Room Type</string>
     <string name="service_type">Service Type</string>
+    <string name="account_type">AccountType</string>
+
 
     <string-array name="room_options">
         <item>Single</item>

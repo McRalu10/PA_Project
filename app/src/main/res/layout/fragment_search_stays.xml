@@ -24,11 +24,13 @@
         <TextView
             android:layout_width="200dp"
             android:layout_height="match_parent"
+            android:background="@color/white"
             android:hint="@string/date_hint" />
         <ImageView
             android:layout_width="50dp"
             android:layout_height="match_parent"
             android:src="@drawable/ic_calendar"
+            android:background="@color/white"
             android:contentDescription="@string/calendar_icon" />
     </LinearLayout>
     <Spinner
@@ -36,14 +38,18 @@
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
+        android:background="@color/white"
         android:entries="@array/room_options"
+        android:spinnerMode="dialog"
         android:prompt="@string/room_type"/>
     <Spinner
         android:id="@+id/service_spinner"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
+        android:background="@color/white"
         android:entries="@array/service_options"
+        android:spinnerMode="dialog"
         android:prompt="@string/service_type"/>
     <Button
         android:id="@+id/search_stays"
