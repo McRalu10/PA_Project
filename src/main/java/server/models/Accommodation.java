@@ -1,7 +1,11 @@
 package server.models;
 
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.UUID;
 
 @Entity
@@ -18,8 +22,10 @@ public class Accommodation {
     private int capacity;
     private boolean checkedIn;
     private boolean checkedOut;
-    private Date checkInDate;
-    private Date checkOutDate;
+    private LocalDate checkInDate;
+    private LocalDate checkOutDate;
+    @ElementCollection
+    private Map<LocalDate,LocalDate> bookedDates;
 
     public Accommodation(AccommodationType accommodationType) {
         new Accommodation();
@@ -37,6 +43,7 @@ public class Accommodation {
 
     public Accommodation() {
         this.free = true;
+        this.bookedDates = new TreeMap<>();
         this.checkedIn = false;
         this.checkedOut = false;
     }
@@ -89,19 +96,19 @@ public class Accommodation {
         this.checkedOut = checkedOut;
     }
 
-    public Date getCheckInDate() {
+    public LocalDate getCheckInDate() {
         return checkInDate;
     }
 
-    public void setCheckInDate(Date checkInDate) {
+    public void setCheckInDate(LocalDate checkInDate) {
         this.checkInDate = checkInDate;
     }
 
-    public Date getCheckOutDate() {
+    public LocalDate getCheckOutDate() {
         return checkOutDate;
     }
 
-    public void setCheckOutDate(Date checkOutDate) {
+    public void setCheckOutDate(LocalDate checkOutDate) {
         this.checkOutDate = checkOutDate;
     }
 
@@ -111,5 +118,13 @@ public class Accommodation {
 
     public void setCapacity(int capacity) {
         this.capacity = capacity;
+    }
+
+    public Map<LocalDate, LocalDate> getBookedDates() {
+        return bookedDates;
+    }
+
+    public void setBookedDates(Map<LocalDate, LocalDate> bookedDates) {
+        this.bookedDates = bookedDates;
     }
 }

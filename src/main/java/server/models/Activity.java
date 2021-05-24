@@ -1,8 +1,8 @@
 package server.models;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -12,7 +12,7 @@ public class Activity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID activityID;
-    private Date date;
+    private LocalDate date;
     private int duration;
     private String title;
     private String description;
@@ -20,7 +20,7 @@ public class Activity {
     @OneToMany
     private List<User> participants;
 
-    public Activity(Date date, int duration, String title, String description, Double price) {
+    public Activity(LocalDate date, int duration, String title, String description, Double price) {
         new Activity();
         this.date = date;
         this.duration = duration;
@@ -41,11 +41,11 @@ public class Activity {
         this.activityID = activityID;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

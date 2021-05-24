@@ -2,15 +2,20 @@ package server.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import server.models.Accommodation;
 import server.models.User;
+import server.repositories.AccommodationRepository;
 import server.repositories.UserRepository;
 
+import java.time.LocalDate;
 import java.util.*;
 
 @Service
 public class UserService {
     @Autowired
     private UserRepository repository;
+    @Autowired
+    private AccommodationRepository accommodationRepository;
 
     public List<User> getAllUsers() {
         List<User> allUsers = repository.findAll();
@@ -49,6 +54,7 @@ public class UserService {
         if(existingUser.isPresent()){
             User updatedUser = existingUser.get();
             updatedUser.setPassword(user.getPassword());
+            updatedUser.setLogged(true);
             repository.save(updatedUser);
         }
         return existingUser;
@@ -76,6 +82,48 @@ public class UserService {
             return true;
         }
         return repository.existsById(id);
+    }
+    public boolean signOut(UUID userID){
+        Optional<User> user = repository.findById(userID);
+        if(user.isPresent()){
+            User existingUser = user.get();
+            existingUser.setLogged(false);
+            repository.save(existingUser);
+            return true;
+        }
+        return false;
+    }
+    public boolean checkIn(UUID userID){
+        Optional<User> user = repository.findById(userID);
+        if(user.isPresent()){
+            User existingUser = user.get();
+            LocalDate date = existingUser.getAccommodation().getCheckInDate();
+            if(date.isEqual(LocalDate.now())){
+                Accommodation accommodation = existingUser.getAccommodation();
+                accommodation.setCheckedIn(true);
+                existingUser.setAccommodation(accommodation);
+                accommodationRepository.save(accommodation);
+            }
+            repository.save(existingUser);
+            return true;
+        }
+        return false;
+    }
+    public boolean checkOut(UUID userID){
+        Optional<User> user = repository.findById(userID);
+        if(user.isPresent()){
+            User existingUser = user.get();
+            LocalDate date = existingUser.getAccommodation().getCheckOutDate();
+            if(date.isEqual(LocalDate.now())){
+                Accommodation accommodation = existingUser.getAccommodation();
+                accommodation.setCheckedOut(true);
+                existingUser.setAccommodation(accommodation);
+                accommodationRepository.save(accommodation);
+            }
+            repository.save(existingUser);
+            return true;
+        }
+        return false;
     }
 
 }
