@@ -42,8 +42,8 @@ public class UserService {
         Optional<User> existingUser = repository.findByEmail(user.getEmail());
         if (existingUser.isPresent()) {
             if (user.getPassword().equals(existingUser.get().getPassword())) {
-                user.setLogged(true);
-                repository.save(user);
+                existingUser.get().setLogged(true);
+                repository.save(existingUser.get());
 
             }
         }
