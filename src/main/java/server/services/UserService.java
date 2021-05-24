@@ -33,27 +33,25 @@ public class UserService {
 
     }
 
-    public boolean login(User user) {
+    public Optional<User> login(User user) {
         Optional<User> existingUser = repository.findByEmail(user.getEmail());
         if (existingUser.isPresent()) {
             if (user.getPassword().equals(existingUser.get().getPassword())) {
                 user.setLogged(true);
                 repository.save(user);
-                return true;
 
             }
         }
-        return false;
+        return existingUser;
     }
-    public boolean resetPassword(User user){
+    public Optional<User> resetPassword(User user){
         Optional<User> existingUser = repository.findByEmail(user.getEmail());
         if(existingUser.isPresent()){
             User updatedUser = existingUser.get();
             updatedUser.setPassword(user.getPassword());
             repository.save(updatedUser);
-            return true;
         }
-        return false;
+        return existingUser;
     }
 
     public User update(User user) {
