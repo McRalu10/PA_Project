@@ -55,4 +55,27 @@ public class AccommodationService {
         return accommodationRepository.save(accommodation);
     }
 
+    // below are used to generate accommodations in DB
+
+    public void create(Accommodation accommodation) {
+        accommodation.setAccommodationID(UUID.randomUUID());
+        accommodationRepository.save(accommodation);
+    }
+    public boolean addAccommodations(){
+        List<Accommodation> accommodations = List.of(new Accommodation(AccommodationType.DOUBLE),
+                new Accommodation(AccommodationType.SUITE),
+                new Accommodation(AccommodationType.SINGLE),
+                new Accommodation(AccommodationType.APARTMENT),
+                new Accommodation(AccommodationType.DOUBLE),
+                new Accommodation(AccommodationType.DOUBLE),
+                new Accommodation(AccommodationType.SUITE),
+                new Accommodation(AccommodationType.SINGLE),
+                new Accommodation(AccommodationType.SINGLE),
+                new Accommodation(AccommodationType.APARTMENT),
+                new Accommodation(AccommodationType.SUITE)
+        );
+        for(Accommodation accommodation : accommodations )
+            create(accommodation);
+        return true;
+    }
 }

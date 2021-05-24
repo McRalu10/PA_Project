@@ -7,9 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import server.models.Accommodation;
 import server.models.AccommodationType;
-import server.models.User;
 import server.services.AccommodationService;
-import server.services.UserService;
+
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -50,5 +49,9 @@ public class AccommodationController {
     @PostMapping("/book/{userID}")
     public ResponseEntity<?> participate(@RequestBody Accommodation accommodation, @PathVariable UUID userID){
         return new ResponseEntity<>(service.book(accommodation,userID),new HttpHeaders(),HttpStatus.OK);
+    }
+    @PostMapping("/add/accommodations")
+    public ResponseEntity<?> addAccommodations(){
+        return new ResponseEntity<>(service.addAccommodations(),new HttpHeaders(),HttpStatus.OK);
     }
 }

@@ -9,10 +9,7 @@ import server.repositories.ActivityRepository;
 import server.repositories.UserRepository;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 public class ActivityService {
@@ -47,5 +44,20 @@ public class ActivityService {
         activity.get().setParticipants(participants);
         return activityRepository.save(activity.get());
     }
-
+// below are used to generate activities in DB
+    public void create(Activity activity) {
+        activity.setActivityID(UUID.randomUUID());
+        activityRepository.save(activity);
+    }
+    public boolean addActivities(){
+        List<Activity> activities = List.of(new Activity(LocalDate.now().plusDays(1),100,"Football day","What a great day to play sports!",20D),
+                new Activity(LocalDate.now().plusDays(1),100,"Basketball day","What a great day to play sports!",20D),
+                new Activity(LocalDate.now().plusDays(2),120,"Hiking day","We are planning a full day of adventures!",15D),
+                new Activity(LocalDate.now().plusDays(3),150,"Books Club day","Don't forget to bring your favorite book",10D),
+                new Activity(LocalDate.now().plusDays(4),60,"Robotics Club Day","The perfect opportunity for learning!",10D),
+                new Activity(LocalDate.now().plusDays(5),70,"Ready for the party?","Get ready for a great party!",50D));
+        for(Activity activity : activities)
+            create(activity);
+        return true;
+    }
 }

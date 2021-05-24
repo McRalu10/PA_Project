@@ -1,9 +1,7 @@
 package server.models;
 
 import javax.persistence.*;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.UUID;
@@ -26,6 +24,7 @@ public class Accommodation {
     private LocalDate checkOutDate;
     @ElementCollection
     private Map<LocalDate,LocalDate> bookedDates;
+
 
     public Accommodation(AccommodationType accommodationType) {
         new Accommodation();
@@ -126,5 +125,13 @@ public class Accommodation {
 
     public void setBookedDates(Map<LocalDate, LocalDate> bookedDates) {
         this.bookedDates = bookedDates;
+    }
+
+    public UUID getAccommodationID() {
+        return accommodationID;
+    }
+
+    public void setAccommodationID(UUID accommodationID) {
+        this.accommodationID = accommodationID;
     }
 }

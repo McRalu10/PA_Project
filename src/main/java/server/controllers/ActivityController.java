@@ -49,4 +49,8 @@ public class ActivityController {
     public ResponseEntity<?> participate(@PathVariable UUID activityID, @PathVariable UUID userID){
         return new ResponseEntity<>(service.participate(activityID,userID),new HttpHeaders(),HttpStatus.OK);
     }
+    @PostMapping("/add/activities")
+    public ResponseEntity<?> addActivities(){
+        return new ResponseEntity<>(service.addActivities(),new HttpHeaders(),HttpStatus.OK);
+    }
 }
