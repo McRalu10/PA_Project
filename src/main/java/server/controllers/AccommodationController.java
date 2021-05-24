@@ -40,7 +40,8 @@ public class AccommodationController {
 
     @GetMapping("/search")
     public ResponseEntity<?> search(@RequestParam String first, @RequestParam String second, @RequestParam String roomType){
-        List<Accommodation> result = service.search(LocalDate.parse(first),LocalDate.parse(second),AccommodationType.valueOf(roomType));
+        int type = Integer.parseInt(roomType);
+        List<Accommodation> result = service.search(LocalDate.parse(first),LocalDate.parse(second),AccommodationType.values()[type]);
         if(result.equals(new ArrayList<>())){
             return new ResponseEntity<>(new HttpHeaders(), HttpStatus.NOT_FOUND);
         }
