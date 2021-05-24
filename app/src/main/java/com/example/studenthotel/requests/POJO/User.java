@@ -32,7 +32,7 @@ public class User {
     private List<Object> notifications = null;
     @SerializedName("accommodation")
     @Expose
-    private Object accommodation;
+    private AccommodationSearch accommodation;
     @SerializedName("logged")
     @Expose
     private Boolean logged;
@@ -105,7 +105,7 @@ public class User {
         return accommodation;
     }
 
-    public void setAccommodation(Object accommodation) {
+    public void setAccommodation(AccommodationSearch accommodation) {
         this.accommodation = accommodation;
     }
 

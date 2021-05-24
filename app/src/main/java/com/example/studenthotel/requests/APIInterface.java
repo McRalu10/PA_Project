@@ -16,7 +16,7 @@ import retrofit2.http.Query;
 
 public interface APIInterface {
 
-    @POST("/users/register")
+    @POST("users/register")
     Call<User> register(@Body User user);
 
     @POST("/users/login")

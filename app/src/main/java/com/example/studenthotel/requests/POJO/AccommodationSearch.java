@@ -26,7 +26,7 @@ public class AccommodationSearch {
     private Double price;
     @SerializedName("participants")
     @Expose
-    private List<Object> participants = null;
+    private List<User> participants = null;
 
     public String getActivityID() {
         return activityID;
@@ -76,11 +76,11 @@ public class AccommodationSearch {
         this.price = price;
     }
 
-    public List<Object> getParticipants() {
+    public List<User> getParticipants() {
         return participants;
     }
 
-    public void setParticipants(List<Object> participants) {
+    public void setParticipants(List<User> participants) {
         this.participants = participants;
     }
 
