@@ -19,19 +19,19 @@ public interface APIInterface {
     @POST("users/register")
     Call<User> register(@Body User user);
 
-    @POST("/users/login")
+    @POST("users/login")
     Call<User> login(@Body User user);
 
-    @PUT("/users/reset")
+    @PUT("users/reset")
     Call<User> reset(@Body User user);
 
-    @GET("/users/out/{userID}")
+    @GET("users/out/{userID}")
     Call<Boolean> signOut(@Path("userID") UUID userID);
 
-    @GET("/users/checkin/{userID}")
+    @GET("users/checkin/{userID}")
     Call<Boolean> checkIn(@Path("userID") UUID userID);
 
-    @GET("/users/checkout/{userID}")
+    @GET("users/checkout/{userID}")
     Call<Boolean> checkOut(@Path("userID") UUID userID);
 
     @GET("accommodation/search")
