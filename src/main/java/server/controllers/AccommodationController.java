@@ -39,8 +39,8 @@ public class AccommodationController {
     }
 
     @GetMapping("/search")
-    public ResponseEntity<?> search(@RequestParam LocalDate first, @RequestParam LocalDate second, @RequestParam AccommodationType roomType){
-        List<Accommodation> result = service.search(first,second,roomType);
+    public ResponseEntity<?> search(@RequestParam String first, @RequestParam String second, @RequestParam AccommodationType roomType){
+        List<Accommodation> result = service.search(LocalDate.parse(first),LocalDate.parse(second),roomType);
         if(result.equals(new ArrayList<>())){
             return new ResponseEntity<>(new HttpHeaders(), HttpStatus.NOT_FOUND);
         }
@@ -50,6 +50,8 @@ public class AccommodationController {
     public ResponseEntity<?> participate(@RequestBody Accommodation accommodation, @PathVariable UUID userID){
         return new ResponseEntity<>(service.book(accommodation,userID),new HttpHeaders(),HttpStatus.OK);
     }
+
+    //do not use
     @PostMapping("/add/accommodations")
     public ResponseEntity<?> addAccommodations(){
         return new ResponseEntity<>(service.addAccommodations(),new HttpHeaders(),HttpStatus.OK);

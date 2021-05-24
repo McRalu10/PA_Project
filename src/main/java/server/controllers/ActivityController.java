@@ -38,8 +38,8 @@ public class ActivityController {
     }
 
     @GetMapping("/search")
-    public ResponseEntity<?> search(@RequestParam LocalDate first, @RequestParam LocalDate second){
-        List<Activity> result = service.search(first,second);
+    public ResponseEntity<?> search(@RequestParam String first, @RequestParam String second){
+        List<Activity> result = service.search(LocalDate.parse(first),LocalDate.parse(second));
         if(result.equals(new ArrayList<>())){
             return new ResponseEntity<>(new HttpHeaders(), HttpStatus.NOT_FOUND);
         }
@@ -49,6 +49,8 @@ public class ActivityController {
     public ResponseEntity<?> participate(@PathVariable UUID activityID, @PathVariable UUID userID){
         return new ResponseEntity<>(service.participate(activityID,userID),new HttpHeaders(),HttpStatus.OK);
     }
+
+    //do not use
     @PostMapping("/add/activities")
     public ResponseEntity<?> addActivities(){
         return new ResponseEntity<>(service.addActivities(),new HttpHeaders(),HttpStatus.OK);
