@@ -12,27 +12,18 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
-import android.support.v4.app.Fragment;
+
 
 import com.example.studenthotel.R;
 
-public class ContactFragment extends FragmentActivity {
+public class ContactFragment extends Fragment {
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_contact);
-    }
-//    public View onCreateView(@NonNull LayoutInflater inflater,
-//                             ViewGroup container, Bundle savedInstanceState) {
-//
-//        return inflater.inflate(R.layout.fragment_contact, container, false);
-//    }
 
-    public void openDial(View view) {
-        TextView phoneNumber = view.findViewById(R.id.phone_number);
-        Uri number = Uri.parse(phoneNumber.toString());
-        Intent callIntent = new Intent(Intent.ACTION_DIAL, number);
-        startActivity(callIntent);
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+
+        return inflater.inflate(R.layout.fragment_contact, container, false);
     }
+
+
 }

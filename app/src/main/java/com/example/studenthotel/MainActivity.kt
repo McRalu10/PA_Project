@@ -19,6 +19,7 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.studenthotel.ui.home.FragmentSearchActivities
@@ -43,14 +44,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        navController = findNavController(R.id.main_nav_host) //Initialising navController
+        navController= supportFragmentManager.findFragmentById(R.id.main_nav_host)?.findNavController()!!
+//        navController = findNavController(R.id.main_nav_host) //Initialising navController
         drawerLayout = findViewById(R.id.main_drawer_layout)
         toolbar = findViewById(R.id.main_toolbar)
         bottomNavigationView = findViewById(R.id.main_bottom_navigation_view)
         navigationView = findViewById(R.id.main_navigation_view)
-        tabLayout = findViewById(R.id.home_tabs)
-        frameLayout = findViewById(R.id.home_frame_layout)
+//        tabLayout = findViewById(R.id.home_tabs)
+//        frameLayout = findViewById(R.id.home_frame_layout)
         appBarConfiguration = AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_rooms, R.id.nav_services,
                 R.id.nav_about, R.id.nav_contact, R.id.action_explore, R.id.action_inbox, R.id.action_profile)
                 .setOpenableLayout(drawerLayout)
