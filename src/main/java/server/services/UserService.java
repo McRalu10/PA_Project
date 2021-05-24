@@ -97,6 +97,8 @@ public class UserService {
         Optional<User> user = repository.findById(userID);
         if(user.isPresent()){
             User existingUser = user.get();
+            if(existingUser.getAccommodation()==null)
+                return false;
             LocalDate date = existingUser.getAccommodation().getCheckInDate();
             if(date.isEqual(LocalDate.now())){
                 Accommodation accommodation = existingUser.getAccommodation();
@@ -113,6 +115,8 @@ public class UserService {
         Optional<User> user = repository.findById(userID);
         if(user.isPresent()){
             User existingUser = user.get();
+            if(existingUser.getAccommodation()==null)
+                return false;
             LocalDate date = existingUser.getAccommodation().getCheckOutDate();
             if(date.isEqual(LocalDate.now())){
                 Accommodation accommodation = existingUser.getAccommodation();

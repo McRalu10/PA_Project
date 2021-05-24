@@ -45,7 +45,7 @@ public class UserController {
         Optional<User> newUser = service.login(user);
         if (newUser.isEmpty())
             return new ResponseEntity<>(new HttpHeaders(), HttpStatus.NOT_FOUND);
-        return new ResponseEntity<>(newUser, new HttpHeaders(), HttpStatus.CREATED);
+        return new ResponseEntity<>(newUser, new HttpHeaders(), HttpStatus.OK);
     }
 
     @PutMapping("/reset")
